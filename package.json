@@ -2,19 +2,32 @@
   "name": "tailwind-parcel",
   "private": true,
   "devDependencies": {
+    "gh-pages-deploy": "^0.5.0",
+    "parcel-bundler": "",
     "postcss-nested": "",
-    "tailwindcss": "",
-    "parcel-bundler": ""
+    "rimraf": "^2.6.2",
+    "tailwindcss": ""
   },
   "dependencies": {
     "classnames": "^2.2.6",
     "proptypes": "^1.1.0",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "recompose": "^0.30.0"
+    "react-dom": "^16.5.2"
   },
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "parcel build src/index.html"
+    "build": "NODE_ENV=production parcel build src/index.html",
+    "deploy": "gh-pages-deploy",
+    "clean-source": "rimraf README.md src webroot package.json package-lock.json .cache postcss.config.js"
+  },
+  "gh-pages-deploy": {
+    "staticpath": "dist",
+    "prep": [
+      "build"
+    ],
+    "post": [
+      "clean-source"
+    ],
+    "noprompt": true
   }
 }
