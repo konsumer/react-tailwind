@@ -1,0 +1,20 @@
+{
+  "name": "tailwind-parcel",
+  "private": true,
+  "devDependencies": {
+    "postcss-nested": "",
+    "tailwindcss": "",
+    "parcel-bundler": ""
+  },
+  "dependencies": {
+    "classnames": "^2.2.6",
+    "proptypes": "^1.1.0",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "recompose": "^0.30.0"
+  },
+  "scripts": {
+    "start": "parcel src/index.html",
+    "build": "parcel build src/index.html"
+  }
+}
