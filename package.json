@@ -16,7 +16,7 @@
   },
   "scripts": {
     "start": "parcel src/index.html",
-    "build": "NODE_ENV=production parcel build src/index.html",
+    "build": "NODE_ENV=production parcel build --public-url ./ src/index.html",
     "deploy": "gh-pages-deploy",
     "clean-source": "rimraf README.md src webroot package.json package-lock.json .cache postcss.config.js"
   },
